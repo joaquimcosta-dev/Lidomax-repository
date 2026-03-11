@@ -1,0 +1,452 @@
+/* ----------------------------------------------------------
+   ESTILO GLOBAL                                                                                                                                                          
+---------------------------------------------------------- */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 100;
+    background: #f1f1ef;
+    font-family: "Inter", Arial, sans-serif;
+    color: #333;
+}
+
+
+.app-container {
+    max-width: 100%;
+    margin: auto;
+    padding-bottom: 80px;
+}
+
+/* CARD */
+.card {
+    margin-top: 50px;
+    margin-left: 35px;
+    margin-right: 35px;
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 20px;
+    display: flex;  
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+/* CONTEÚDO DO CARD */
+.card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-info h3 {
+  font-size: 20px;
+  color: #222;
+}
+
+.card-info p {
+    margin: 6px 0 14px;
+    font-size: 14px;
+    color: #777;
+    line-height: 1.4;
+}
+
+/* BOTÃO */
+.card-info button {
+    width: fit-content;
+    background: #6c63ff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.card-info button:hover {
+    background: #5a52e0;
+}
+
+/* IMAGEM */
+.card img {
+    width: 110px;
+    height: 110px;
+    border-radius: 14px;
+    object-fit: contain;
+}
+
+
+/*  HEADER  */
+.app-header {
+    margin-top: -50px;
+    width: 100%;
+    background:#f1f1ef;
+    /*box-shadow: 0 0 2px 1px #00000048;*/
+    justify-content: center;
+    position: fixed;
+}
+/*Cabeçalho*/
+
+.cabecalho {
+    justify-items: center;
+}
+
+.cabecalho h1{
+    padding: 0 0 7px 0;
+    font-size: 18px;
+    font-family: colmeak;
+    color:#6c63ff;
+}
+
+
+.cabecalho .img-cab{
+    top: 11px;
+    position: relative;
+    left: 0px;
+    height: 35px;
+    width: 35px;
+}
+
+
+/* ----------------------------------------------------------
+   sidebar
+---------------------------------------------------------- */
+
+.menu-btn {
+    height: 30px;
+    width: 30px;
+    position: fixed;
+    top: 18px;
+    left: 5.5px;
+    z-index: 999;
+    font-size: 18px;
+    background: #ffffff;
+    /*background: linear-gradient(290deg,#ffffbe, #dac1fa);*/
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: none;
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: -200px;
+    width: 200px;
+    height: 100%;
+    background: #ffffff;
+    z-index: 9998;
+    padding: 0;
+    transition: 0.5s ease;
+}
+
+.sidebar.open{
+    left: 0;
+}
+
+.sidebar-header{
+    text-align: center;
+    margin-top: 0;
+}
+
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-menu a {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: block;
+    font-family: colmeak;
+    justify-content: center;
+    position: center;
+    font-size: 18px;
+    color: #827cff;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.sidebar-menu a:hover, .sidebar-menu a.active {
+    background: #4f48d621;
+    font-weight: 800;
+}
+
+.sidebar-menu .relat-img {
+    position: relative;
+    width: 25px;
+    height: 25px;
+}
+
+.sidebar-menu .devs-img {
+    position: relative;
+    top: 6px;
+    width: 25px;
+    height: 25px;
+}
+
+.sidebar-menu .ini-logo {
+    position: relative;
+    width: 25px;
+    height: 25px;
+}
+
+.sidebar-menu li:hover {
+    background: #f1f1ff;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 9990;
+    display: none;
+}
+
+.overlay.show {
+    display: block;
+}
+
+.app-logo {
+    width: 120px;
+    height: 60px;
+}
+
+.app-title {
+    margin: 0;
+    font-size: 25px;
+    color: #6c63ff;
+    font-weight: 700;
+}
+
+.app-subtitle {
+    margin: 0;
+    color: #000000;
+    font-size: 14px;
+}
+
+
+/* ----------------------------------------------------------
+   CARDS
+---------------------------------------------------------- */
+
+.card {
+    border:1px solid #7e7cff3a;
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 25px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.13);
+}
+
+.card-title {
+    font-family: colmeak;
+    display: flex;
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 19px;
+    font-weight: 700;
+    color: #444;
+}
+
+
+/* ----------------------------------------------------------
+   CAMPOS
+---------------------------------------------------------- */
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-top: 14px;
+}
+
+.input-select {
+    display: flex;
+    width: 100%;
+    padding: 9px;
+    margin-top: 6px;
+    font-size: 15px;
+    border-radius: 14px;
+    border: 1.6px solid #dfe3fd;
+    background: #f8f9ff;
+    outline: none;
+    transition: 0.2s;
+}
+
+.input-field {
+    display: flex;
+    width: 98%;
+    padding: 9px;
+    margin-top: 6px;
+    font-size: 15px;
+    border-radius: 14px;
+    border: 1.6px solid #dfe3fd;
+    background: #f8f9ff;
+    outline: none;
+    transition: 0.2s;
+}
+
+.input-field:focus,
+.input-select:focus {
+    border-color: #6c63ff;
+    box-shadow: 0 0 8px rgba(108, 99, 255, 0.35);
+}
+
+
+/* ----------------------------------------------------------
+   BOTÕES
+---------------------------------------------------------- */
+
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    margin-top: 22px;
+    font-family: colmeak;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(135deg, #6c63ff, #5048d6);
+    box-shadow: 0 6px 14px rgb(179, 161, 255);
+    transition: 300ms ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgb(118, 112, 240);
+}
+
+
+
+/* ----------------------------------------------------------
+   ÁREA DE RESULTADOS
+---------------------------------------------------------- */
+
+
+.result-box {
+    margin-top: 22px;
+    padding: 18px;
+    background: #f5f6ff;
+    border-radius: 16px;
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-size: 16px;
+    border-bottom: 1px solid #c8cffc;
+}
+
+.result-item:last-child {
+    border-bottom: none;
+}
+
+/* ----------------------------------------------------------
+   ALERTAS
+---------------------------------------------------------- */
+
+.alerta {
+    margin-top: 18px;
+    padding: 16px;
+    border-radius: 16px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.alerta.verde {
+    background: #e6f9ef;
+    color: #226c42;
+}
+
+.alerta.amarelo {
+    background: #fff8d5;
+    color: #8a7400;
+}
+
+.alerta.vermelho {
+    background: #ffe3e0;
+    color: #b11515;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ===== MENU INFERIOR SIMPLES, ESTILO SPOTIFY ===== */
+
+.simple-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  z-index: 999;
+  padding-bottom: env(safe-area-inset-bottom);
+  /*box-shadow: 0 0 2px 1px #00000048;*/
+  border: 1px solid #00000009;
+}
+
+.simple-bottom-nav ul {
+  display: flex;
+  width: 100%;
+  margin: 0;
+  padding: 8px 0;
+  list-style: none;
+  justify-content: space-around;
+}
+
+.simple-bottom-nav li  {
+    font-family: colmeak;
+    text-align: center;
+    cursor: pointer;
+    flex: 1;
+    font-size: 10px;
+    color: #838383;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+
+.simple-bottom-nav li ion-icon {
+  color: #5c5c5c;
+}
+
+.simple-bottom-nav li ion-icon img{
+    width: 20px;
+    height: 20px;
+
+}
+
+.simple-bottom-nav li.active,
+.simple-bottom-nav li.active ion-icon  {
+  color: #6c63ff;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.simple-bottom-nav li.active ion-icon img{
+    
+    width: 23px;
+    height: 23px;
+}
+
+/* Para telas muito pequenas */
+@media (max-width: 360px) {
+  .simple-bottom-nav li span {
+    font-size: 10px;
+  }
+}
+

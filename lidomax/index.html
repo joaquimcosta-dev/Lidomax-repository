@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lidomax - Cálculo Anestésico</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        
+
+    <header class="app-header">
+        <div class="all">
+            <div class="left-side">
+                <div class="cabecalho">
+                    <h1>
+                        <img src="homelilas.png" alt="" class="img-cab">
+                        Início Max
+                    </h1>
+                </div>
+            </div>
+        
+            <div class="right-side">
+                <!-- Data -->
+                <div class="data-dia">
+                    <input type="date">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="app-container">
+
+        <!-- Sidebar -->
+        <button class="menu-btn" id="openMenu">≡</button>
+
+         <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <img src="lidomax2.png" alt="Lidomax-Logo" class="app-logo">
+                <div>
+                    <h1 class="app-title"></h1>
+                    <p class="app-subtitle">Cálculo Anestésico Odontológico</p>
+                </div>
+                <ul class="sidebar-menu">
+                    <li>
+                        <a href="index.html" class="active">
+                            <img src="homegrad.png"class="ini-logo">
+                            Início Max
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#"> 
+                            <img src="historico.png"class="relat-img">
+                            Gerar Relatório
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="devs.html"> 
+                            <img src="devs.png"class="devs-img">
+                            DEVS
+                        </a>
+                    </li>
+                </ul>
+            </div>
+         </div>
+
+         <div class="overlay" id="overlay"></div>
+
+        <!-- CARD DE SELEÇÃO -->
+        <section class="card">
+            <h2 class="card-title">Selecione o Anestésico</h2>
+
+            <select id="anestesico" class="input-select">
+                <option value="">Selecione o anestésico</option>
+
+                <option value="artica4"
+                    data-percent="4"
+                    data-dosekg="7"
+                    data-doseabs="500"
+                    data-volume="1.8">
+                    Articaína 4%
+               </option>
+
+               <option value="Bupiva0.5"
+                    data-percent="0.5"
+                    data-dosekg="1.3"
+                    data-doseabs="90"
+                    data-volume="1.8">
+                    Bupivacaína 0,5%
+               </option>
+
+               <option value="lido2"
+                    data-percent="2"
+                    data-dosekg="4.4"
+                    data-doseabs="300"
+                    data-volume="1.8">
+                    Lidocaína 2%
+               </option>
+
+               <option value="lido3"
+                    data-percent="3"
+                    data-dosekg="4.4"
+                    data-doseabs="300"
+                    data-volume="1.8">
+                    Lidocaína 3%
+               </option>
+
+               <option value="mepiva2"
+                    data-percent="2"
+                    data-dosekg="4.4"
+                    data-doseabs="300"
+                    data-volume="1.8">
+                    Mepivacaína 2%
+                </option>
+
+               <option value="prilo3"
+                   data-percent="3"
+                   data-dosekg="6"
+                   data-doseabs="400"
+                   data-volume="1.8">
+                   Prilocaína 3%
+               </option>
+            </select>
+
+            <button id="btn-confirmar" class="btn-primary">Continuar</button>
+        </section>
+
+
+        <!-- CARD DE CÁLCULO -->
+        <section id="calc-area" class="card hidden">
+
+            <h2 class="card-title">Dados do cálculo</h2>
+
+            <label>Nome do Paciente</label>
+            <input type="text" id="paciente" class="input-field" placeholder="Nome">
+
+            <label>Peso (kg)</label>
+            <input type="number" id="peso" class="input-field" placeholder="Ex: 70">
+
+            <label>Percentagem (%)</label>
+            <input type="number" id="percent" class="input-field" placeholder="Ex: 2">
+
+            <label>Dose máxima por kg (mg/kg)</label>
+            <input type="number" id="dosekg" class="input-field" placeholder="Ex: 4.4">
+
+            <label>Dose máxima absoluta (mg)</label>
+            <input type="number" id="doseabs" class="input-field" placeholder="Ex: 300">
+
+            <label>Volume do tubete (mL)</label>
+            <input type="number" id="volume" class="input-field" placeholder="Ex: 10">
+
+            <label>Dose planeada (mg) — opcional</label>
+            <input type="number" id="doseplaneada" class="input-field" placeholder="Ex: 200">
+
+            <button id="btn-calcular" class="btn-primary">Calcular</button>
+
+
+            <!-- RESULTADOS -->
+            <div  class="result-box hidden" id="resultado-area">
+
+                <div class="result-item">
+                    <span>Paciente: </span>
+                    <strong id="res-paciente">—</strong>
+                </div>
+
+                <div class="result-item">
+                    <span>Dose Máxima Total: </span>
+                    <strong id="res-dose-total">—</strong>
+                </div>
+
+                <div class="result-item">
+                    <span>Mg por Tubete: </span>
+                    <strong id="res-mg-tubete">—</strong>
+                </div>
+
+                <div class="result-item">
+                    <span>Nº Total de Tubetes: </span>
+                    <strong id="res-tubetes">—</strong>
+                </div>
+
+                <div class="result-item">
+                    <span>Tubetes Inteiros: </span>
+                    <strong id="res-tubetes-int">—</strong>
+                </div>
+
+                <div id="alerta" class="alerta">
+                    <p id="alerta-msg">—</p>
+                </div>
+            </div>
+
+        </section>
+        
+
+            <!-- ===== MENU INFERIOR ===== -->
+        <nav class="simple-bottom-nav">
+            <ul>
+                <li data-target="historico">
+                    <ion-icon name="person-outline"><img src="historico.png" alt=""></ion-icon>
+                    <span>Histórico</span>
+                </li>
+
+                <li class="active" data-target="home" data-file="index.html">
+                    <ion-icon name="home-outline"><img src="homelilas.png" alt=""></ion-icon>
+                    <span>INÍCIO</span>
+                </li>
+
+                <li data-target="config">
+                    <ion-icon name="settings-outline"><img src="config.png" alt=""></ion-icon>
+                    <span>Configurações</span>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+
+
+<!-- IONIC ICONS 
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>-->
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
